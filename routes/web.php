@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
-
+use App\Http\Controllers\AuthorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +21,5 @@ Route::post('/created', [BookController::class, 'createbook'])->name('create');
 Route::get('/editBook/{id}', [BookController::class, 'editform'])->name('editform');
 Route::patch('/edited/{id}', [BookController::class, 'edit'])->name('edited');
 Route::delete('/delete/{id}', [BookController::class, 'delete'])->name('delete');
+Route::get('/create-new-author', [AuthorController::class, 'createform'])->name('create.author.form');
+Route::post('/create-author', [AuthorController::class, 'create'])->name('create.author');

@@ -28,36 +28,14 @@
             </ul>
         </div>
     </nav>
-    <form method="POST" action="{{route('create')}}" class="content">
+    <form method="POST" action="{{route('create.author')}}" class="content">
         @csrf
-        <p>Add New Book</p>
+        <p>Create Author</p>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Judul buku</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" name="title" aria-describedby="inputGroup-sizing-default">
+            <span class="input-group-text" id="inputGroup-sizing-default">Nama Author</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" name="author_name" aria-describedby="inputGroup-sizing-default">
         </div>
-
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Harga buku</span>
-            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="price">
-        </div>
-
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Stok buku</span>
-            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="stock">
-        </div>
-
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Author</span>
-
-            <select class="form-select" aria-label="Default select example" name="author_id">
-                <option selected>Select Author</option>
-                @foreach($authors as $author)
-                    <option value="{{$author->id}}">{{$author->name}}</option>
-                @endforeach
-            </select>
-        </div>
-
-        <button type="submit" class="btn btn-success">Submit</button>  
+        <button type="submit">Submit</button>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

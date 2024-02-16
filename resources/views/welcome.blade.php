@@ -16,7 +16,10 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route('createform')}}">Add</a>
+                <a class="nav-link" href="{{route('createform')}}">Add Book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('create.author.form')}}">Add Author</a>
               </li>
             </ul>
             
@@ -32,8 +35,9 @@
           {{-- <img src="{{asset('pictures/harrypotter.jpg')}}" class="card-img-top" alt="..."> --}}
           <div class="card-body">
             <h5 class="card-title">{{$buku->title}}</h5>
-            <p>{{$buku->price}}</p>
-            <p>{{$buku->stock}}</p>
+            <p>Rp.{{$buku->price}},00</p>
+            <p>{{$buku->stock}} pcs</p>
+            <p style="font-weight: 500; color:green">by {{$buku->author->name}}</p>
             
             <a href="{{route('editform', ['id' => $buku->id])}}" class="btn btn-primary">Edit</a>
 
@@ -42,7 +46,7 @@
               @method('DELETE')
               <button class="btn btn-danger">Delete</button>
             </form>
-            
+
           </div>
         </div>
       @endforeach

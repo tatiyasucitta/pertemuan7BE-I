@@ -16,7 +16,10 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route('createform')}}">Add</a>
+                <a class="nav-link" href="{{route('createform')}}">Add Book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('create.author.form')}}">Add Author</a>
               </li>
             </ul>
             
@@ -43,6 +46,17 @@
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Stok buku</span>
             <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="stock" value={{$buku->stock}}>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Author</span>
+
+            <select class="form-select" aria-label="Default select example" name="author_id">
+                <option selected>{{$buku->author->name}}</option>
+                @foreach($authors as $author)
+                    <option value="{{$author->id}}">{{$author->name}}</option>
+                @endforeach
+            </select>
         </div>
 
         <button type="submit" class="btn btn-success">Submit</button>  
