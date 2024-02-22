@@ -21,6 +21,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{route('create.author.form')}}">Add Author</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('create.cat.form')}}">Create Category</a>
+              </li>
             </ul>
             
             <ul>
@@ -38,8 +41,13 @@
             <p>Rp.{{$buku->price}},00</p>
             <p>{{$buku->stock}} pcs</p>
             <p style="font-weight: 500; color:green">by {{$buku->author->name}}</p>
+            <h5>Category:</h5>
+            @foreach ($buku->category as $c)
+                <li>{{$c->categoryName}}</li>
+            @endforeach
             
             <a href="{{route('editform', ['id' => $buku->id])}}" class="btn btn-primary">Edit</a>
+            <a href="{{route('catform', ['id' => $buku->id])}}" class="btn btn-success">Add Category</a>
 
             <form method="POST" action="{{route('delete', ['id' => $buku->id])}}">
               @csrf

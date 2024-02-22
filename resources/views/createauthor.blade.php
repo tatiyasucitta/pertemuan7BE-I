@@ -21,6 +21,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{route('create.author.form')}}">Add Author</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('create.cat.form')}}">Create Category</a>
+              </li>
             </ul>
 
             <ul>
