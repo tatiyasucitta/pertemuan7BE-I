@@ -32,7 +32,7 @@
         </div>
     </nav>
 
-    <form method="POST" action="{{route('edited', ['id' => $buku->id])}}" class="content">
+    <form method="POST" action="{{route('edited', ['id' => $buku->id])}}" class="content" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
         <h1>Edit New Book</h1>
@@ -52,10 +52,15 @@
         </div>
 
         <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Foto buku</span>
+            <input type="file" class="form-control" name="bookpic">
+        </div> 
+
+        <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Author</span>
 
             <select class="form-select" aria-label="Default select example" name="author_id">
-                <option selected>{{$buku->author->name}}</option>
+                <option selected value="{{$buku->author->id}}">{{$buku->author->name}}</option>
                 @foreach($authors as $author)
                     <option value="{{$author->id}}">{{$author->name}}</option>
                 @endforeach

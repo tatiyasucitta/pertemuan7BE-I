@@ -31,7 +31,7 @@
             </ul>
         </div>
     </nav>
-    <form method="POST" action="{{route('create')}}" class="content">
+    <form method="POST" action="{{route('create')}}" class="content" enctype="multipart/form-data">
         @csrf
         <p>Add New Book</p>
         <div class="input-group mb-3">
@@ -47,6 +47,11 @@
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Stok buku</span>
             <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="stock">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Foto buku</span>
+            <input type="file" class="form-control" name="bookpic">
         </div>
 
         <div class="input-group mb-3">

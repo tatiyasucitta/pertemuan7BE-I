@@ -35,7 +35,7 @@
     <div class="content">
       @foreach($semuabuku as $buku)
         <div class="card" style="width: 18rem;">
-          {{-- <img src="{{asset('pictures/harrypotter.jpg')}}" class="card-img-top" alt="..."> --}}
+          <img src="{{asset('/storage/bookimage/images/'.$buku->image)}}" class="card-img-top" alt="foto.buku">
           <div class="card-body">
             <h5 class="card-title">{{$buku->title}}</h5>
             <p>Rp.{{$buku->price}},00</p>

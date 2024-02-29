@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->unsignedBigInteger('price');
             $table->unsignedBigInteger('stock');
+            $table->string('image')->nullable();
             $table->foreignId('author_id')
                 ->reference('id')
                 ->on('authors')

@@ -14,7 +14,8 @@ class Book extends Model
         'title',
         'price',
         'stock',
-        'author_id'
+        'author_id',
+        'image'
     ];
 
     public function Author(): BelongsTo{
