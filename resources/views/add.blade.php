@@ -31,6 +31,7 @@
             </ul>
         </div>
     </nav>
+    
     <form method="POST" action="{{route('create')}}" class="content" enctype="multipart/form-data">
         @csrf
         <p>Add New Book</p>

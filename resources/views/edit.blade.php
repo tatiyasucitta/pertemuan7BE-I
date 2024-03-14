@@ -60,11 +60,21 @@
             <span class="input-group-text" id="inputGroup-sizing-default">Author</span>
 
             <select class="form-select" aria-label="Default select example" name="author_id">
-                <option selected value="{{$buku->author->id}}">{{$buku->author->name}}</option>
+                <option selected>Please input the author name</option>
                 @foreach($authors as $author)
                     <option value="{{$author->id}}">{{$author->name}}</option>
                 @endforeach
             </select>
+
+            @if($errors->any())
+                {{$errors->first()}}
+            @endif
+
+            @if(session()->has('success'))
+                {{session()->get('success')}}
+            @endif
+
+            <button type="submit">Submit</button>
         </div>
 
         <button type="submit" class="btn btn-success">Submit</button>  
